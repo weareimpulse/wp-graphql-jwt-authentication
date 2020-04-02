@@ -1,4 +1,4 @@
-<?php
+r<?php
 
 namespace WPGraphQL\JWT_Authentication;
 
@@ -585,7 +585,7 @@ class Auth {
 		/**
 		 * The Token is decoded now validate the iss
 		 */
-		if ( ! isset( $token->iss ) || get_bloginfo( 'url' ) !== $token->iss ) {
+		if ( ! isset( $token->iss ) || home_url( 'url' ) !== $token->iss ) {
 			return new \WP_Error( 'invalid-jwt', __( 'The iss do not match with this server', 'wp-graphql-jwt-authentication' ) );
 		}
 
